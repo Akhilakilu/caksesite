@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="quantity">
+    <button class="minusButton">-</button>
+    <input type="text" value="1" id="quantity">
+    <button class="plusButton">+</button>
+</div>
+</body>
+<script>
+
+
+document.querySelector(".minusButton").setAttribute("disabled","disabled");
+var valuecount;
+document.querySelector(".plusButton").addEventListener("click",function(){
+
+    valuecount=document.getElementById("quantity").value;
+    valuecount++;
+    document.getElementById("quantity").value=valuecount 
+    if(valuecount>1){
+    document.querySelector(".minusButton").removeAttribute("disabled");
+    document.querySelector(".minusButton").classList.remove("disabled");
+
+}
+    
+})
+document.querySelector(".minusButton").addEventListener("click",function(){
+
+valuecount=document.getElementById("quantity").value;
+valuecount--;
+document.getElementById("quantity").value=valuecount 
+if(valuecount==1){
+    document.querySelector(".minusButton").setAttribute("disabled","disables");
+}
+})
+</script>
+</html>
